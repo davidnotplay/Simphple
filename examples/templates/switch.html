@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Switch struct example</title>
+</head>
+<body>
+	<!-- IF !empty($word) -->
+	<div>
+		<!-- SWITCH $word CASE "simphple" -->
+		The selected word is <b>simphple</b>
+		<!-- BREAK -->
+		
+		<!-- CASE "php" -->
+		The selected word is <b>php</b>
+		<!-- BREAK -->
+		
+		<!-- CASE 'framework' -->
+		The selected word is <b>framework</b>
+		<!-- BREAK -->
+		
+		<!-- DEFAULT -->
+		No selected word
+		<!-- ENDSWITCH -->
+	<br/><a href="switch.php">Back</a>
+	</div>
+	<!-- ELSE -->
+	<form action="switch.php" method="post">
+		<select name="word">
+			<option value="none">Select a word</option>
+			<option value="simphple">Simhple</option>
+			<option value="php">php</option>
+			<option value="framework">framework</option>
+		</select> <input name="submit" type="submit" value="send" />
+	</form>
+	<!-- ENDIF -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Examples of Simphple caché.</title>
+</head>
+<body><div>
+<!-- IF $created -->
+    Data $name created.
+<!-- ENDIF -->
+
+<!-- IF $loaded -->
+    <!-- IF $exists -->
+        Data $name loaded. The value is: <br/>
+        $value
+    <!-- ELSE -->
+        Data $name not exists.
+    <!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF $deleted -->
+    <!-- IF $exists -->
+        Data $name deleted.
+    <!-- ELSE -->
+        Data $name not exists.
+    <!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+<fieldset>
+    <legend>Create data</legend>
+    <form action="cache.php" method="post">
+        <div>Name: <input name="name" type="text"/></div>
+        <div>Value: <input name="value" type="text"/></div>
+        <div>time to live: <input name="ttl" type="text"/></div>
+        <div><input name="send" type="submit" value="Send"/></div>
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend>Load and delete data</legend>
+    <form action="cache.php" method="post">
+       <div>Name of data:<input name="name" type="text"/></div> 
+        <div>
+            <input name="send_load" type="submit" value="Load"/>
+            <input name="send_delete" type="submit" value="Delete"/>
+        </div>
+    </form>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,14 @@
+HISTORY
+
+VERSION 1.1.0
+
+- Remake the Sphp_Template_Code class
+- Make the Sphp_Template_Exe class. 
+
+- Rename variable $sphp._X_ for $_sphp_.X .
+
+- Add the switch structure.
+- Add the arguments for include structure.
+- Add the continue structure.
+- Add the exit structure.
+

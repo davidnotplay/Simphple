@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Custom error function</title>
+</head>
+<body>
+
+	<!-- IF isset($error_file) -->
+		<!-- INCLUDE $error_file -->
+		<!-- EXIT -->
+	<!-- ENDIF -->
+
+	<h1>Error in the templates</h1>
+	<div>
+		<a href="custom_error_function.php?page=parse_error">Parse error</a><br />
+		<a href="custom_error_function.php?page=warnings">Warnings</a><br /> <a
+			href="custom_error_function.php?page=functions">Functions</a>
+	</div><br/>
+	<div>
+		See the <a href="errors.log" title="errors.log">error log</a>
+	</div>
+</body>
+</html>

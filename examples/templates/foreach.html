@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Foreach structure example</title>
+</head>
+<body>
+	<h1>Simple array in foreach</h1>
+	<ul>
+		<!-- FOREACH c=$colors -->
+		<li>$c._VAL_</li>
+		<!-- ENDFOREACH -->
+	</ul>
+
+	<h1>Multilevel array in foreach</h1>
+	<ul>
+		<!-- FOREACH n_ary=array(array(1,2), array(3,4), array(5,6)) -->
+		<li><b>Position {$n_ary._CUR_+1:}</b>
+			<ul>
+				<!-- FOREACH number=$n_ary._VAL_ -->
+				<li>$number._VAL_</li>
+				<!-- ENDFOREACH -->
+			</ul></li>
+		<!-- ENDFOREACH -->
+	</ul>
+
+	<h1>Array with keys in foreach</h1>
+	<!-- FOREACH country = $countries -->
+	<ul>
+		<li><b>Name: </b>$country.name</li>
+		<li><b>Language: </b>$country.language</li>
+		<li><b>Continent: </b>$country.continent</li>
+		<li><b>Cities:</b>
+		<ul>
+				<!-- FOREACH city = $country.cities -->
+				<li>$city.name</li>
+				<!-- ENDFOREACH -->
+			</ul></li>
+	</ul>
+	<br />
+	<!-- ENDFOREACH -->
+
+	<h1>Special variables for foreach structure</h1>
+	<table border="1" cellpadding="3" style="text-align: left;">
+		<tr style="font-size: 14pt">
+			<th>Element <span style="font-size: 11pt;">(&#36;n_ary._VAL_)</span></th>
+			<th>Current <span style="font-size: 11pt;">(&#36;n_ary._CUR_)</span></th>
+			<th>Max <span style="font-size: 11pt;">(&#36;n_ary._MAX_)</span></th>
+			<th>First <span style="font-size: 11pt;">(&#36;n_ary._FIRST_)</span></th>
+			<th>Last <span style="font-size: 11pt;">(&#36;n_ary._LAST_)</span></th>
+			<th>Even <span style="font-size: 11pt;">(&#36;n_ary._EVEN_)</span></th>
+		</tr>
+		<!-- FOREACH n_ary=array('a', 'e', 'i', 'o', 'u') -->
+		<tr>
+			<td>$n_ary._VAL_</td>
+			<td>$n_ary._CUR_</td>
+			<td>$n_ary._MAX_</td>
+			<td>
+				<!-- IF $n_ary._FIRST_ -->true<!-- ELSE -->false<!-- ENDIF -->
+			</td>
+			<td>
+				<!-- IF $n_ary._LAST_ -->true<!-- ELSE -->false<!-- ENDIF -->
+			</td>
+			<td>
+				<!-- IF $n_ary._EVEN_ -->true<!-- ELSE -->false<!-- ENDIF -->
+			</td>
+		</tr>
+		<!-- ENDFOREACH -->
+	</table>
+	
+	<h1>Continue structure in foreach bucle</h1>
+	<ul>
+	<!-- FOREACH n=$number -->
+		<li>
+			<!-- IF $n._VAL_%3==0 -->
+				$n._VAL_ is a multiple of 3.
+				<!-- CONTINUE -->
+			<!-- ENDIF -->
+			$n._VAL_ isn't a multiple of 3.
+		</li>
+	<!-- ENDFOREACH -->
+	</ul>
+</body>
+</html>

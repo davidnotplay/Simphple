@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Examples of list and rows</title>
+</head>
+<body>
+<div>
+    <h1>Lists</h1>
+    <ul>
+        <!-- FOREACH country = $list_countries -->
+            <li>
+                <b>Name: </b>$country.name
+                <ul>
+                    <!-- FOREACH city = $country.cities -->
+                        <li><b>Name: </b>$city.name</li>
+                    <!-- ENDFOREACH -->
+                </ul>
+            </li>
+        <!-- ENDFOREACH -->
+    </ul>
+</div>
+</body>
+</html>

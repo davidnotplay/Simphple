@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>if structure example</title>
+</head>
+<body>
+	<!-- IF !empty($number) || !empty($age) || !empty($gender) -->
+	<h1>Number info</h1>
+	<div>
+		<!-- IF !is_numeric($number) -->
+		The data isn't number.
+		<!-- ELSEIF $number>100 -->
+		The number is greater than 100
+		<!-- ELSEIF $number>=20 -->
+		The number is between 100 and 20
+		<!-- ELSEIF $number>=0 -->
+		The number is equal to or greater than 0
+		<!-- ELSE -->
+		The number is negative.
+		<!-- ENDIF -->
+	</div><br/>
+	<h1>Gender and age</h1>
+	<div>
+		<!-- IF $gender==MALE && $age==16 -->
+		Is a male and is 16 years old.
+		<!-- ELSEIF $gender==FEMALE && $age==16 -->
+		Is a female and is 16 years old.
+		<!-- ELSEIF $gender==MALE && $age==35 -->
+		Is a male and is 35 years old
+		<!-- ELSEIF $gender==FEMALE && $age==35 -->
+		Is a female and is 35 years old
+		<!-- ENDIF -->
+	</div>
+	<div><a href="if.php">Back</a></div>
+	<!-- ELSE -->
+	<h1>Complete the form</h1>
+	<form action="if.php" method="post">
+		<div>Write a number: <input name="number" type="text" value=""/></div>
+		<div>Select a gender: <input name="gender" checked="checked" type="radio" value="{MALE:}"/>Male&nbsp;&nbsp;<input name="gender" type="radio" value="{FEMALE:}"/>Female</div>
+		<div>Selec a age: <input name="age" checked="checked" type="radio" value="16"/>16&nbsp;&nbsp;<input name="age" type="radio" value="35"/>35</div>
+		<div><input name="submit" type="submit" value="Send"/></div>
+	</form>
+	
+	<!-- ENDIF -->
+</body>
+</html>
