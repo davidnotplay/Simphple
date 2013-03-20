@@ -109,7 +109,7 @@ class Sphp_Template_Code{
 	 * @return boolean True if there php tags.
 	 */
 	private function check_php_code($code){
-		$search = '#<\?php|<\?|\?>#';
+		$search = '#<\?php[\s]+|<\?[\s]+|[\s]+\?>#';
 		if(preg_match($search, $code)){
 			$this->errors[] = 'syntax error, illegal php tags';
 			return true;
@@ -139,7 +139,7 @@ class Sphp_Template_Code{
 			$this->line++;
 		}while($this->line<$lines_sz && !$this->errors);
 
-		return !$this->errors ?	preg_replace('#\?>([\s]*)<\?php#', '$1', implode("\n", $php_lines)):
+		return !$this->errors ?	preg_replace('#\[^;]?>([\s]*)<\?php#', '$1', implode("\n", $php_lines)):
 								'<?php $this->sphp_error(E_USER_ERROR,\''.$this->errors[0].'\',false,'.
 									$this->line.'); ?>';
 	}
