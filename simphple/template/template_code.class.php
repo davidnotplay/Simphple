@@ -386,7 +386,7 @@ class Sphp_Template_Code{
 	private function t_key_structures_in_key($code, &$keys){
 		$keys = array();
 		$keys_sz = 0;
-		$search = '#\{(.*?(?:(\'|\\\\*")(?:.*?)(?<!\\\\)\2.*?)*?)\:([a-zA-Z]*)\}#e';
+		$search = '#\{([^\n\r{]*?(?:(\'|\\\\*")(?:.*?)(?<!\\\\)\2.*?)*?)\:([a-zA-Z]*)\}#e';
 		$replace = '(($keys[$keys_sz]=array(\'$1\', \'$3\'))&&false).\';;;SPHP_KEY_STRUCTURE_\'.($keys_sz++).\';;;\'';
 	
 		$code = preg_replace($search, $replace, $code);
