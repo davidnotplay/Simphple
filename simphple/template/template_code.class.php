@@ -41,7 +41,7 @@ if(!defined('E_USER_DEPRECATED')){
  */
 class Sphp_Template_Code{
 	
-	const VERSION = '1.1.0';
+	const VERSION = '1.1.1';
 	
 	/**
 	 * Format for names and function names.
