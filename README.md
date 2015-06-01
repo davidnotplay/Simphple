@@ -2,7 +2,7 @@
 Powerfull PHP Template engine
 
 
-### <a href="http://www.simphle.com">Website</a>
+### <a href="http://www.simphple.com">Website</a>
 
 ## Doc
 <a href="http://www.simphple.com/en/manual">English</a> <br/>
