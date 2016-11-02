@@ -1,10 +1,12 @@
 # Simphple
 Powerfull PHP Template engine
 
+**Deprecated**
 
-### <a href="http://www.simphple.com">Website</a>
+
+### <strike><a href="http://www.simphple.com">Website</a></strike>
 
 ## Doc
-<a href="http://www.simphple.com/en/manual">English</a> <br/>
-<a href="http://www.simphple.com/manual">Spanish</a>
+<strike><a href="http://www.simphple.com/en/manual">English</a></strike> <br/>
+<strike><a href="http://www.simphple.com/manual">Spanish</a></strike>
 
